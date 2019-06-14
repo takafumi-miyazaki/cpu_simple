@@ -1,5 +1,6 @@
 `timescale 1ps/1ps
 module incrementer_tp;
+   reg clk;
    reg [3:0] A, B;
    reg 	     C;
    wire [3:0] D;
@@ -20,8 +21,8 @@ module incrementer_tp;
       $finish;
    end
 
-   initial $monitor($time, "A=%b, B=%b, C=%b, D=%b",
-		    A, B, C, D);
+   initial $monitor($time, "clk=%b, A=%b, B=%b, C=%b, D=%b",
+		    clk, A, B, C, D);
 endmodule // incrementer_tp
 
 	 
