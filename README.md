@@ -1,13 +1,13 @@
-# cpu_simple
+# simplep
 簡単なCPUをVerilog-HDLで記述する手習いプロジェクト
 
 # 使用言語
 Verilog-HDL
 
 # プロジェクトの構造（予定）
-.    
+simplep    
 ├── README.md    
-└── src    
+└── simplep1    
 |	├── alu.v    
 |	├── alu_tp.v    
 |	├── cpu_simple.v    
@@ -22,6 +22,7 @@ Verilog-HDL
 | 	├── program_counter_tp.v    
 | 	├── register_file.v  
 | 	└── register_file_tp.v    
+└── simplep2
 |
 
 1 directory, 15 files    
