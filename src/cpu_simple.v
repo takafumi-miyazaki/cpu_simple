@@ -1,8 +1,8 @@
-module cpu_simple(clk, rst, out_PC);
+module cpu_simple(clk, rst, out_PC, out_IM);
    input clk, rst;
    output [3:0] out_PC; // program counterを観測する. シュミレーションのために必要.
    wire [3:0] 	out_IC; // incrementerの出力 
-   wire [7:0] out_IM; // instruction memoryの出力. 
+   output [7:0] out_IM; // instruction memoryの出力. 
    wire [7:0] out_RF; // register fileの出力
    wire [3:0] out_AL; // aluの出力
    wire [3:0] out_MX; // multiplexerの出力
