@@ -33,10 +33,10 @@ module register_file (clk, rst, A, B, C, D, E, F, G) ;
    assign G = read_file(B, file00, file01, file10, file11);
     */
    always @ (posedge rst) begin
-      file[2'b00] <= 4'b0001;
-      file[2'b01] <= 4'b0010;
-      file[2'b10] <= 4'b0100;
-      file[2'b11] <= 4'b1000;
+      file[2'b00] <= 4'b0000; // 0
+      file[2'b01] <= 4'b0001; // 1
+      file[2'b10] <= 4'b0010; // 2
+      file[2'b11] <= 4'b0011; // 3
    end
 
    always @ (A or B) begin

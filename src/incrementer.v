@@ -1,5 +1,4 @@
-module incrementer(clk, rst, A, B);
-   input clk, rst;
+module incrementer(A, B);
    input [3:0] A;
    output [3:0] B;
 

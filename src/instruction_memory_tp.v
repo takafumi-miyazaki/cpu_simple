@@ -1,12 +1,13 @@
 `timescale 1ps/1ps
 module instruction_memory_tp;
-   reg [3:0] A;
-   reg 	     clk;
-   wire [7:0] B;
+   reg clk; // clock
+   reg rst; // reset signel
+   reg [3:0] A; // input. address
+   wire [7:0] B; // output. data indicated by address A
 
    parameter STEP = 1000;
 
-   instruction_memory instruction_memory(A, B);
+   instruction_memory instruction_memory(clk, rst, A, B);
    
    always begin
       clk = 1; #(STEP/2);
@@ -14,8 +15,8 @@ module instruction_memory_tp;
    end
    
    initial begin
-      A = 4'b0000;
-      #(STEP/2) A = 4'b0001;
+      rst = 1; A = 4'b0000;
+      #(STEP/2) rst = 0; A = 4'b0001;
       #(STEP/2) A = 4'b0010;
       #(STEP/2) A = 4'b0011;
       #(STEP/2) A = 4'b0100;
@@ -33,6 +34,6 @@ module instruction_memory_tp;
       $finish;
    end
 
-   initial $monitor($time, "clk=%b A=%b B=%b", clk, A, B);
+   initial $monitor($time, "clk=%b rst=%b A=%b B=%b", clk, rst, A, B);
          
-endmodule // program_counter
+endmodule // instruction_memory_tp
